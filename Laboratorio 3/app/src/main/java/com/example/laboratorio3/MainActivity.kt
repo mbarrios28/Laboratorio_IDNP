@@ -112,14 +112,14 @@ fun PantallaInicio(navController: NavController) {
         Button(
             onClick = {
 
-                if (nombre.isBlank()) {
+                if (!validarNombre(nombre)) {
 
                     mostrarError = true
 
                 } else {
 
                     navController.navigate(
-                        "bienvenida/${Uri.encode(nombre)}"
+                        "bienvenida/${Uri.encode(nombre.trim())}"
                     )
                 }
             }
@@ -127,6 +127,10 @@ fun PantallaInicio(navController: NavController) {
             Text("Continuar")
         }
     }
+}
+
+private fun validarNombre(nombre: String): Boolean {
+    return nombre.isNotBlank()
 }
 
 @Composable
