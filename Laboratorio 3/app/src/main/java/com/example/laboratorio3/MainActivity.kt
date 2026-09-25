@@ -52,7 +52,7 @@ fun MiAplicacion() {
                 ?.getString("nombre")
                 ?: ""
 
-            PantallaBienvenida(nombre)
+            PantallaBienvenida(nombre, navController)
         }
     }
 }
@@ -130,7 +130,7 @@ fun PantallaInicio(navController: NavController) {
 }
 
 @Composable
-fun PantallaBienvenida(nombre: String) {
+fun PantallaBienvenida(nombre: String, navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -144,5 +144,17 @@ fun PantallaBienvenida(nombre: String) {
             text = "Bienvenido, $nombre",
             style = MaterialTheme.typography.headlineMedium
         )
+
+        Spacer(
+            modifier = Modifier.height(20.dp)
+        )
+
+        Button(
+            onClick = {
+                navController.popBackStack()
+            }
+        ) {
+            Text("Volver")
+        }
     }
 }
