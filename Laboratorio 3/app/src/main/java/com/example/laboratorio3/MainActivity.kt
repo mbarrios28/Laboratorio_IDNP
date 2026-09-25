@@ -1,5 +1,6 @@
 package com.example.laboratorio3
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -118,7 +119,7 @@ fun PantallaInicio(navController: NavController) {
                 } else {
 
                     navController.navigate(
-                        "bienvenida/$nombre"
+                        "bienvenida/${Uri.encode(nombre)}"
                     )
                 }
             }
