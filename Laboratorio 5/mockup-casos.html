@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockups - Casos de prueba</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#2d2d2d; padding:20px; }
+  .grid { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; }
+  .case { text-align:center; }
+  .case h2 { color:#fff; font-size:14px; margin:0 0 10px; font-weight:normal; }
+  .phone { width:300px; background:#fff; border-radius:24px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,.5); text-align:left; margin:0 auto; }
+  .phone h1 { font-size:24px; margin:8px 0 20px; }
+  .field { margin-bottom:14px; }
+  label { display:block; font-size:12px; color:#666; margin-bottom:4px; }
+  input { width:100%; box-sizing:border-box; padding:11px; font-size:15px; border:1px solid #888; border-radius:6px; outline:none; }
+  .error input { border:2px solid #b3261e; }
+  .error label { color:#b3261e; }
+  .msg { font-size:11px; margin-top:3px; min-height:14px; }
+  .msg.error { color:#b3261e; }
+  .row { display:flex; gap:16px; margin-top:14px; }
+  button { flex:1; padding:11px; font-size:14px; border-radius:20px; }
+  .outlined { background:#fff; color:#6200ee; border:1px solid #888; }
+  .filled { background:#6200ee; color:#fff; border:1px solid #6200ee; }
+  .filled.disabled { background:#e0e0e0; color:#999; border:1px solid #e0e0e0; }
+  .overlay { position:relative; margin-top:14px; background:rgba(0,0,0,.05); border-radius:12px; padding:14px; border:1px dashed #999; }
+  .overlay h3 { margin:0 0 8px; font-size:15px; }
+  .overlay p { font-size:13px; color:#333; line-height:1.5; margin:0; }
+  .overlay button { width:100%; margin-top:10px; background:#6200ee; color:#fff; border:none; border-radius:20px; padding:9px; }
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <div class="case">
+    <h2>Caso 1 — Campos vacíos</h2>
+    <div class="phone">
+      <h1>Registro</h1>
+      <div class="field error">
+        <label>Nombre</label>
+        <input type="text" value="">
+        <div class="msg error">El nombre es obligatorio</div>
+      </div>
+      <div class="field error">
+        <label>Correo</label>
+        <input type="email" value="">
+        <div class="msg error">El correo es obligatorio</div>
+      </div>
+      <div class="field error">
+        <label>Teléfono</label>
+        <input type="tel" value="">
+        <div class="msg error">El teléfono es obligatorio</div>
+      </div>
+      <div class="row">
+        <button class="outlined">Limpiar</button>
+        <button class="filled disabled">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <h2>Caso 2 — Teléfono vacío</h2>
+    <div class="phone">
+      <h1>Registro</h1>
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" value="Eduardo">
+        <div class="msg"></div>
+      </div>
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" value="eduardo@correo">
+        <div class="msg"></div>
+      </div>
+      <div class="field error">
+        <label>Teléfono</label>
+        <input type="tel" value="">
+        <div class="msg error">El teléfono es obligatorio</div>
+      </div>
+      <div class="row">
+        <button class="outlined">Limpiar</button>
+        <button class="filled disabled">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <h2>Caso 3 — Teléfono con letras</h2>
+    <div class="phone">
+      <h1>Registro</h1>
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" value="Eduardo">
+        <div class="msg"></div>
+      </div>
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" value="eduardo@correo">
+        <div class="msg"></div>
+      </div>
+      <div class="field error">
+        <label>Teléfono</label>
+        <input type="tel" value="123abc45">
+        <div class="msg error">El teléfono solo admite números</div>
+      </div>
+      <div class="row">
+        <button class="outlined">Limpiar</button>
+        <button class="filled disabled">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <h2>Caso 4 — Correo sin formato</h2>
+    <div class="phone">
+      <h1>Registro</h1>
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" value="Eduardo">
+        <div class="msg"></div>
+      </div>
+      <div class="field error">
+        <label>Correo</label>
+        <input type="email" value="eduardo">
+        <div class="msg error">El correo no tiene un formato válido</div>
+      </div>
+      <div class="field">
+        <label>Teléfono</label>
+        <input type="tel" value="987654321">
+        <div class="msg"></div>
+      </div>
+      <div class="row">
+        <button class="outlined">Limpiar</button>
+        <button class="filled disabled">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <h2>Caso 5 — Datos válidos</h2>
+    <div class="phone">
+      <h1>Registro</h1>
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" value="Eduardo">
+        <div class="msg"></div>
+      </div>
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" value="eduardo@correo.com">
+        <div class="msg"></div>
+      </div>
+      <div class="field">
+        <label>Teléfono</label>
+        <input type="tel" value="987654321">
+        <div class="msg"></div>
+      </div>
+      <div class="row">
+        <button class="outlined">Limpiar</button>
+        <button class="filled">Guardar</button>
+      </div>
+      <div class="overlay">
+        <h3>Datos guardados</h3>
+        <p>Nombre: Eduardo<br>Correo: eduardo@correo.com<br>Teléfono: 987654321</p>
+        <button>Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <h2>Caso 6 — Después de Limpiar</h2>
+    <div class="phone">
+      <h1>Registro</h1>
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" value="">
+        <div class="msg"></div>
+      </div>
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" value="">
+        <div class="msg"></div>
+      </div>
+      <div class="field">
+        <label>Teléfono</label>
+        <input type="tel" value="">
+        <div class="msg"></div>
+      </div>
+      <div class="row">
+        <button class="outlined">Limpiar</button>
+        <button class="filled disabled">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

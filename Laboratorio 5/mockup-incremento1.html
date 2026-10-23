@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup - Registro (Incremento 1)</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#e8e8e8; display:flex; justify-content:center; padding:40px; }
+  .phone { width:320px; background:#fff; border-radius:24px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,.2); }
+  h1 { font-size:24px; margin:8px 0 24px; }
+  .field { margin-bottom:16px; }
+  label { display:block; font-size:12px; color:#666; margin-bottom:4px; }
+  input { width:100%; box-sizing:border-box; padding:12px; font-size:15px; border:1px solid #888; border-radius:6px; outline:none; }
+  input:focus { border-color:#6200ee; border-width:2px; }
+  .hint { font-size:10px; color:#999; margin-top:2px; }
+</style>
+</head>
+<body>
+  <div class="phone">
+    <h1>Registro</h1>
+    <div class="field">
+      <label>Nombre</label>
+      <input type="text" placeholder="Nombre">
+    </div>
+    <div class="field">
+      <label>Correo</label>
+      <input type="email" placeholder="Correo">
+      <div class="hint">teclado tipo correo</div>
+    </div>
+    <div class="field">
+      <label>Teléfono</label>
+      <input type="tel" placeholder="Teléfono">
+      <div class="hint">teclado numérico</div>
+    </div>
+  </div>
+</body>
+</html>

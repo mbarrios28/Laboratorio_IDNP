@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup - Registro con validación (Incremento 2)</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#2d2d2d; display:flex; justify-content:center; padding:40px; }
+  .phone { width:320px; background:#fff; border-radius:24px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,.5); }
+  h1 { font-size:24px; margin:8px 0 24px; }
+  .field { margin-bottom:18px; }
+  label { display:block; font-size:12px; color:#666; margin-bottom:4px; }
+  input { width:100%; box-sizing:border-box; padding:12px; font-size:15px; border:1px solid #888; border-radius:6px; outline:none; }
+  input:focus { border-color:#6200ee; border-width:2px; }
+  .error input { border-color:#b3261e; border-width:2px; }
+  .error label { color:#b3261e; }
+  .msg { font-size:11px; margin-top:4px; }
+  .msg.error { color:#b3261e; }
+  .hint { font-size:10px; color:#999; margin-top:2px; }
+</style>
+</head>
+<body>
+  <div class="phone">
+    <h1>Registro</h1>
+    <div class="field error">
+      <label>Nombre</label>
+      <input type="text" value="">
+      <div class="msg error">El nombre es obligatorio</div>
+    </div>
+    <div class="field error">
+      <label>Correo</label>
+      <input type="email" value="eduardo@correo">
+      <div class="msg error">El correo no tiene un formato válido</div>
+    </div>
+    <div class="field error">
+      <label>Teléfono</label>
+      <input type="tel" value="123abc45">
+      <div class="msg error">El teléfono solo admite números</div>
+    </div>
+  </div>
+</body>
+</html>
