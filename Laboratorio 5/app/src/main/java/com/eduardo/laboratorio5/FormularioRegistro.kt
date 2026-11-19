@@ -90,7 +90,6 @@ fun FormularioRegistro(modifier: Modifier = Modifier) {
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .onFocusChanged { if (!it.isFocused) nombreTocado = true }
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -107,7 +106,6 @@ fun FormularioRegistro(modifier: Modifier = Modifier) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier
                 .fillMaxWidth()
-                .onFocusChanged { if (!it.isFocused) correoTocado = true }
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -124,7 +122,6 @@ fun FormularioRegistro(modifier: Modifier = Modifier) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
             modifier = Modifier
                 .fillMaxWidth()
-                .onFocusChanged { if (!it.isFocused) telefonoTocado = true }
         )
 
         Spacer(modifier = Modifier.height(32.dp))
